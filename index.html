@@ -13,28 +13,30 @@
   <div class="desktop-overlay" aria-hidden="true"></div>
 
   <section class="desktop-icons" aria-label="Desktop shortcuts">
-    <button class="desktop-icon" data-open="mycomputer"><span class="desk-glyph">💻</span><span>My Computer</span></button>
-    <button class="desktop-icon" data-open="production"><span class="desk-glyph">📁</span><span>Creative Production</span></button>
-    <button class="desktop-icon" data-open="commercial"><span class="desk-glyph">👓</span><span>Commercial Imaging</span></button>
-    <button class="desktop-icon" data-open="art"><span class="desk-glyph">🖼️</span><span>Art Practice</span></button>
-    <button class="desktop-icon" data-open="about"><span class="desk-glyph">📝</span><span>About.txt</span></button>
-    <button class="desktop-icon" data-open="resume"><span class="desk-glyph">📄</span><span>Resume.doc</span></button>
-    <button class="desktop-icon" data-open="mydocuments"><span class="desk-glyph">🗂️</span><span>My Documents</span></button>
-    <button class="desktop-icon" data-open="internet"><span class="desk-glyph">🌐</span><span>Internet Explorer</span></button>
-    <button class="desktop-icon" data-open="paint"><span class="desk-glyph">🎨</span><span>Paint</span></button>
-    <button class="desktop-icon" data-open="solitaire"><span class="desk-glyph">🃏</span><span>Solitaire</span></button>
-    <button class="desktop-icon recycle" data-open="recycle"><span class="desk-glyph">🗑️</span><span>Recycle Bin</span></button>
+    <button class="desktop-icon" data-open="mycomputer"><span class="desk-glyph"><img src="assets/icons/my-computer.png" alt=""></span><span>My Computer</span></button>
+    <button class="desktop-icon" data-open="work"><span class="desk-glyph"><img src="assets/icons/work-explorer.png" alt=""></span><span>Stephanie’s Work</span></button>
+    <button class="desktop-icon" data-open="experiential"><span class="desk-glyph"><img src="assets/icons/experiential-marketing.png" alt=""></span><span>Experiential Marketing</span></button>
+    <button class="desktop-icon" data-open="production"><span class="desk-glyph"><img src="assets/icons/creative-production.png" alt=""></span><span>Creative Production</span></button>
+    <button class="desktop-icon" data-open="commercial"><span class="desk-glyph"><img src="assets/icons/commercial-imaging.png" alt=""></span><span>Commercial Imaging</span></button>
+    <button class="desktop-icon" data-open="art"><span class="desk-glyph"><img src="assets/icons/art-practice.png" alt=""></span><span>Art Practice</span></button>
+    <button class="desktop-icon" data-open="about"><span class="desk-glyph"><img src="assets/icons/about.png" alt=""></span><span>About.txt</span></button>
+    <button class="desktop-icon" data-open="resume"><span class="desk-glyph"><img src="assets/icons/resume.png" alt=""></span><span>Resume.doc</span></button>
+    <button class="desktop-icon" data-open="mydocuments"><span class="desk-glyph"><img src="assets/icons/my-documents.png" alt=""></span><span>My Documents</span></button>
+    <button class="desktop-icon" data-open="internet"><span class="desk-glyph"><img src="assets/icons/internet.png" alt=""></span><span>Internet Explorer</span></button>
+    <button class="desktop-icon" data-open="paint"><span class="desk-glyph"><img src="assets/icons/paint.png" alt=""></span><span>Paint</span></button>
+    <button class="desktop-icon" data-open="solitaire"><span class="desk-glyph"><img src="assets/icons/solitaire.png" alt=""></span><span>Solitaire</span></button>
+    <button class="desktop-icon recycle" data-open="recycle"><span class="desk-glyph"><img src="assets/icons/recycle.png" alt=""></span><span>Recycle Bin</span></button>
   </section>
 
   <aside id="clippy" class="clippy-card" aria-label="Portfolio assistant">
     <button class="clippy-close" aria-label="Close assistant">×</button>
     <div class="clippy-bubble">
       <strong>It looks like you’re trying to hire a creative producer &amp; experiential marketing expert.</strong>
-      <p>Would you like some help?</p>
+      <p>Here are a few places to start:</p>
       <div class="button-row">
-        <button class="classic-button" data-open="production">View My Work</button>
+        <button class="classic-button" data-open="work">Explore Stephanie’s Work</button>
         <button class="classic-button" data-open="about">About Stephanie</button>
-        <button class="classic-button" data-open="resume">Résumé</button>
+        <button class="classic-button" data-open="resume">View Résumé</button>
       </div>
     </div>
     <img class="clippy-art" src="assets/images/clippy.png" alt="Clippy, the classic Office assistant">
@@ -45,6 +47,8 @@
       <header class="titlebar"><span>My Computer</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
       <div class="menu-row">File&nbsp;&nbsp; Edit&nbsp;&nbsp; View&nbsp;&nbsp; Help</div>
       <div class="window-body folder-view">
+        <button data-open="work"><span>🗂️</span>Stephanie’s Work</button>
+        <button data-open="experiential"><span>🎟️</span>Experiential Marketing</button>
         <button data-open="production"><span>📁</span>Creative Production</button>
         <button data-open="commercial"><span>📁</span>Commercial Imaging</button>
         <button data-open="art"><span>📁</span>Art Practice</button>
@@ -63,7 +67,7 @@
         <button data-open="resume"><span>📄</span>Resume.doc</button>
         <button data-open="about"><span>📝</span>ProfessionalBio.txt</button>
         <button data-open="about"><span>📝</span>ArtistStatement.txt</button>
-        <button data-open="production"><span>📁</span>Selected Projects</button>
+        <button data-open="work"><span>🗂️</span>Stephanie’s Work</button>
         <button data-open="art"><span>🖼️</span>Reflections</button>
         <button data-open="contact"><span>📇</span>Contact.vcf</button>
       </div>
@@ -83,6 +87,74 @@
           <h2>Art practice</h2>
           <p>My photographic work explores the relationship between truth, simulation, reflection, and constructed imagery. By combining photographed, rendered, manipulated, and found visual material, I question photography’s traditional role as evidence.</p>
           <div class="quick-facts"><span>📍 New York City</span><span>🎓 Parsons School of Design</span><span>🎬 Creative Production</span><span>📷 Photography</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="window" data-window="work" style="--x:11vw;--y:6vh;--w:min(980px,90vw)">
+      <header class="titlebar"><span>Stephanie’s Work — Portfolio Explorer</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
+      <div class="menu-row">File&nbsp;&nbsp; Edit&nbsp;&nbsp; View&nbsp;&nbsp; Favorites&nbsp;&nbsp; Help</div>
+      <div class="address-row"><strong>Address</strong><span>C:\Stephanie’s Work</span></div>
+      <div class="window-body">
+        <div class="section-intro"><span class="eyebrow">PORTFOLIO</span><h1>Explore Stephanie’s Work</h1><p>Choose a discipline to explore projects spanning live experiences, creative production, commercial imaging, and photographic art.</p></div>
+        <div class="work-category-grid">
+          <button class="work-category-card" data-open="experiential"><span class="category-icon"><img src="assets/icons/experiential-marketing.png" alt=""></span><div><h2>Experiential Marketing</h2><p>Educational programs, retail activations, brand partnerships, and live audience experiences.</p><b>2 case studies</b></div></button>
+          <button class="work-category-card" data-open="production"><span class="category-icon"><img src="assets/icons/creative-production.png" alt=""></span><div><h2>Creative Production</h2><p>Product launches, campaign films, creative direction, and end-to-end production.</p><b>4 case studies</b></div></button>
+          <button class="work-category-card" data-open="commercial"><span class="category-icon"><img src="assets/icons/commercial-imaging.png" alt=""></span><div><h2>Commercial Imaging</h2><p>Photography, retouching, ecommerce imagery, and print-ready production.</p><b>Portfolio gallery</b></div></button>
+          <button class="work-category-card" data-open="art"><span class="category-icon"><img src="assets/icons/art-practice.png" alt=""></span><div><h2>Art Practice</h2><p>Personal photography examining reflection, perception, and constructed realities.</p><b>View Reflections</b></div></button>
+        </div>
+      </div>
+      <div class="status-row">4 portfolio categories</div>
+    </article>
+
+    <article class="window" data-window="experiential" style="--x:12vw;--y:7vh;--w:min(1040px,90vw)">
+      <header class="titlebar"><span>Experiential Marketing</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
+      <div class="window-body">
+        <div class="section-intro"><span class="eyebrow">LIVE EXPERIENCES / EDUCATION / RETAIL</span><h1>Experiential Marketing</h1><p>Collaborative brand experiences that turn education, product discovery, and live programming into meaningful audience engagement.</p></div>
+        <div class="project-grid">
+          <button class="project-card project-card-image" data-open="lexar-event"><img src="assets/images/events/lexar-afa/hero.jpg" alt=""><div><b>01</b><h2>Lexar x AFA Soccer Fan Zone</h2><p>A multi-zone retail experience combining education, live photography, freestyle performance, and customer participation.</p></div></button>
+          <button class="project-card project-card-image" data-open="nikon-mothers-day"><img src="assets/images/events/nikon-mothers-day/hero.jpg" alt=""><div><b>02</b><h2>Mother’s Day Magic on the High Line</h2><p>A 150+ person Nikon and SanDisk workshop connecting retail education with a live High Line photo walk.</p></div></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="window event-window" data-window="lexar-event" style="--x:3vw;--y:2vh;--w:min(1220px,94vw)">
+      <header class="titlebar"><span>Lexar x AFA Soccer Fan Zone — Experiential Case Study</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
+      <div class="menu-row">File&nbsp;&nbsp; View&nbsp;&nbsp; Gallery&nbsp;&nbsp; Help</div>
+      <div class="window-body event-case">
+        <div class="event-hero"><img src="assets/images/events/lexar-afa/hero.jpg" alt="Lexar and AFA soccer fan activation in the retail environment"><div class="event-hero-copy"><span class="eyebrow">EXPERIENTIAL MARKETING / RETAIL ACTIVATION</span><h1>Lexar x AFA Soccer Fan Zone</h1><p>Developed in close partnership with Lexar and the Argentina Football Association, this multi-zone retail experience translated the energy surrounding international soccer in New York City into an educational and participatory customer event.</p></div></div>
+        <div class="event-details">
+          <div><h2>The experience</h2><p>I led the experiential direction and in-store execution while collaborating with Lexar on the broader concept. Together, we developed a program that combined an educational panel and discussion, a live photography demonstration, football freestyle performances, a look-alike contest, giveaways, and interactive activations throughout the store.</p></div>
+          <dl class="snapshot"><dt>Role</dt><dd>Event Space Manager</dd><dt>Partners</dt><dd>Lexar and Argentina Football Association (AFA)</dd><dt>What I led</dt><dd>Experiential direction, collaborative concept development, educational programming, retail activation planning, cross-functional coordination, talent integration, and on-site execution</dd></dl>
+        </div>
+        <h2>Experience gallery</h2>
+        <div class="event-gallery">
+          <button data-lightbox="assets/images/events/lexar-afa/education.jpg"><img src="assets/images/events/lexar-afa/education.jpg" alt="Audience attending the educational photography program"></button>
+          <button data-lightbox="assets/images/events/lexar-afa/live-shoot.jpg"><img src="assets/images/events/lexar-afa/live-shoot.jpg" alt="Live educational soccer-themed photo shoot"></button>
+          <button data-lightbox="assets/images/events/lexar-afa/freestyle.jpg"><img src="assets/images/events/lexar-afa/freestyle.jpg" alt="Football freestyle activation inside the store"></button>
+          <button data-lightbox="assets/images/events/lexar-afa/freestyle-detail.jpg"><img src="assets/images/events/lexar-afa/freestyle-detail.jpg" alt="Football freestyler demonstrating with a soccer ball"></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="window event-window" data-window="nikon-mothers-day" style="--x:3vw;--y:2vh;--w:min(1220px,94vw)">
+      <header class="titlebar"><span>Mother’s Day Magic on the High Line — Experiential Case Study</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
+      <div class="menu-row">File&nbsp;&nbsp; View&nbsp;&nbsp; Gallery&nbsp;&nbsp; Help</div>
+      <div class="window-body event-case">
+        <div class="event-hero"><img src="assets/images/events/nikon-mothers-day/hero.jpg" alt="Large photography workshop group on the High Line"><div class="event-hero-copy"><span class="eyebrow">EXPERIENTIAL MARKETING / EDUCATIONAL PROGRAMMING</span><h1>Mother’s Day Magic on the High Line</h1><p>Developed in partnership with Nikon, SanDisk, and the High Line, this Mother’s Day activation connected hands-on photography education with product discovery and an experiential journey through New York City.</p><p class="impact-callout"><strong>150+ attendees</strong> participated in the program.</p></div></div>
+        <div class="event-details">
+          <div><h2>The experience</h2><p>Led by photographer Tina Sokolovska, the workshop began in the retail environment, where participants received guidance, borrowed Nikon equipment, and connected with brand and gear experts. The group then moved to the High Line for a live photography workshop featuring two models before returning to the store for additional product engagement, SanDisk activations, giveaways, and ice cream.</p></div>
+          <dl class="snapshot"><dt>Role</dt><dd>Event Space Manager</dd><dt>Partners</dt><dd>Nikon, SanDisk, and the High Line</dd><dt>Instructor</dt><dd>Tina Sokolovska</dd><dt>What I led</dt><dd>Collaborative concept development, experiential and educational programming, partner coordination, instructor and live-shoot integration, the retail-to-High-Line audience journey, product discovery, and on-site production</dd></dl>
+        </div>
+        <h2>Experience gallery</h2>
+        <div class="event-gallery event-gallery-nikon">
+          <button data-lightbox="assets/images/events/nikon-mothers-day/event-graphic.jpg"><img src="assets/images/events/nikon-mothers-day/event-graphic.jpg" alt="Mother’s Day Magic on the High Line event graphic"></button>
+          <button data-lightbox="assets/images/events/nikon-mothers-day/store-crowd.jpg"><img src="assets/images/events/nikon-mothers-day/store-crowd.jpg" alt="Workshop attendees gathering in the retail event space"></button>
+          <button data-lightbox="assets/images/events/nikon-mothers-day/high-line-workshop.jpg"><img src="assets/images/events/nikon-mothers-day/high-line-workshop.jpg" alt="Photography instruction on the High Line"></button>
+          <button data-lightbox="assets/images/events/nikon-mothers-day/high-line-group.jpg"><img src="assets/images/events/nikon-mothers-day/high-line-group.jpg" alt="Large workshop group photographing a model on the High Line"></button>
+          <button data-lightbox="assets/images/events/nikon-mothers-day/sandisk-demo.jpg"><img src="assets/images/events/nikon-mothers-day/sandisk-demo.jpg" alt="SanDisk product discovery station in the store"></button>
+          <button data-lightbox="assets/images/events/nikon-mothers-day/ice-cream.jpg"><img src="assets/images/events/nikon-mothers-day/ice-cream.jpg" alt="Ice cream activation at the end of the event"></button>
+          <button data-lightbox="assets/images/events/nikon-mothers-day/nikon-treats.jpg"><img src="assets/images/events/nikon-mothers-day/nikon-treats.jpg" alt="Nikon-branded event treats"></button>
         </div>
       </div>
     </article>
@@ -204,7 +276,7 @@
   </section>
 
   <footer class="taskbar"><button id="start-button" class="start-button"><span class="windows-logo">★</span> Start</button><div class="task-label" aria-hidden="true">Stephanie 98</div><div id="task-buttons" class="task-buttons"></div><div id="clock" class="clock"></div></footer>
-  <nav id="start-menu" class="start-menu" aria-label="Stephanie 98 Start menu"><div class="start-rail"><span>STEPHANIE 98</span></div><div class="start-items"><button data-open="mycomputer">💻 My Computer</button><button data-open="mydocuments">🗂️ My Documents</button><button data-open="production">📁 Creative Production</button><button data-open="commercial">👓 Commercial Imaging</button><button data-open="art">🖼️ Art Practice</button><button data-open="about">📝 About</button><button data-open="resume">📄 Résumé</button><hr><button data-open="paint">🎨 Paint</button><button data-open="solitaire">🃏 Solitaire</button><button data-open="internet">🌐 Internet Explorer</button><button data-open="contact">📬 Contact</button></div></nav>
+  <nav id="start-menu" class="start-menu" aria-label="Stephanie 98 Start menu"><div class="start-rail"><span>STEPHANIE 98</span></div><div class="start-items"><button data-open="mycomputer">💻 My Computer</button><button data-open="mydocuments">🗂️ My Documents</button><button data-open="work">🗂️ Stephanie’s Work</button><button data-open="experiential">🎟️ Experiential Marketing</button><button data-open="production">📁 Creative Production</button><button data-open="commercial">👓 Commercial Imaging</button><button data-open="art">🖼️ Art Practice</button><button data-open="about">📝 About</button><button data-open="resume">📄 Résumé</button><hr><button data-open="paint">🎨 Paint</button><button data-open="solitaire">🃏 Solitaire</button><button data-open="internet">🌐 Internet Explorer</button><button data-open="contact">📬 Contact</button></div></nav>
 
   <div id="lightbox" class="lightbox" hidden><button aria-label="Close image">×</button><img alt="Expanded portfolio image"></div>
 </main>
