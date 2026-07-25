@@ -19,6 +19,7 @@
     <button class="desktop-icon" data-open="art"><span class="desk-glyph">🖼️</span><span>Art Practice</span></button>
     <button class="desktop-icon" data-open="about"><span class="desk-glyph">📝</span><span>About.txt</span></button>
     <button class="desktop-icon" data-open="resume"><span class="desk-glyph">📄</span><span>Resume.doc</span></button>
+    <button class="desktop-icon" data-open="mydocuments"><span class="desk-glyph">🗂️</span><span>My Documents</span></button>
     <button class="desktop-icon" data-open="internet"><span class="desk-glyph">🌐</span><span>Internet Explorer</span></button>
     <button class="desktop-icon" data-open="paint"><span class="desk-glyph">🎨</span><span>Paint</span></button>
     <button class="desktop-icon" data-open="solitaire"><span class="desk-glyph">🃏</span><span>Solitaire</span></button>
@@ -49,8 +50,24 @@
         <button data-open="art"><span>📁</span>Art Practice</button>
         <button data-open="about"><span>📝</span>About.txt</button>
         <button data-open="resume"><span>📄</span>Resume.doc</button>
+        <button data-open="mydocuments"><span>🗂️</span>My Documents</button>
         <button data-open="contact"><span>📬</span>Contact</button>
       </div>
+    </article>
+
+    <article class="window" data-window="mydocuments" style="--x:16vw;--y:10vh;--w:min(760px,86vw)">
+      <header class="titlebar"><span>My Documents</span><div class="window-controls"><button data-minimize aria-label="Minimize">_</button><button data-maximize aria-label="Maximize">□</button><button data-close aria-label="Close">×</button></div></header>
+      <div class="menu-row">File&nbsp;&nbsp; Edit&nbsp;&nbsp; View&nbsp;&nbsp; Favorites&nbsp;&nbsp; Help</div>
+      <div class="address-row"><strong>Address</strong><span>C:\My Documents</span></div>
+      <div class="window-body folder-view documents-view">
+        <button data-open="resume"><span>📄</span>Resume.doc</button>
+        <button data-open="about"><span>📝</span>ProfessionalBio.txt</button>
+        <button data-open="about"><span>📝</span>ArtistStatement.txt</button>
+        <button data-open="production"><span>📁</span>Selected Projects</button>
+        <button data-open="art"><span>🖼️</span>Reflections</button>
+        <button data-open="contact"><span>📇</span>Contact.vcf</button>
+      </div>
+      <div class="status-row">6 object(s)</div>
     </article>
 
     <article class="window" data-window="about" style="--x:9vw;--y:5vh;--w:min(900px,88vw)">
@@ -187,7 +204,7 @@
   </section>
 
   <footer class="taskbar"><button id="start-button" class="start-button"><span class="windows-logo">★</span> Start</button><div class="task-label" aria-hidden="true">Stephanie 98</div><div id="task-buttons" class="task-buttons"></div><div id="clock" class="clock"></div></footer>
-  <nav id="start-menu" class="start-menu"><div class="start-rail"><span>STEPHANIE 98</span></div><div class="start-items"><button data-open="mycomputer">💻 My Computer</button><button data-open="production">📁 Creative Production</button><button data-open="commercial">👓 Commercial Imaging</button><button data-open="art">🖼️ Art Practice</button><button data-open="about">📝 About</button><button data-open="resume">📄 Résumé</button><hr><button data-open="paint">🎨 Paint</button><button data-open="solitaire">🃏 Solitaire</button><button data-open="internet">🌐 Internet Explorer</button><button data-open="contact">📬 Contact</button></div></nav>
+  <nav id="start-menu" class="start-menu" aria-label="Stephanie 98 Start menu"><div class="start-rail"><span>STEPHANIE 98</span></div><div class="start-items"><button data-open="mycomputer">💻 My Computer</button><button data-open="mydocuments">🗂️ My Documents</button><button data-open="production">📁 Creative Production</button><button data-open="commercial">👓 Commercial Imaging</button><button data-open="art">🖼️ Art Practice</button><button data-open="about">📝 About</button><button data-open="resume">📄 Résumé</button><hr><button data-open="paint">🎨 Paint</button><button data-open="solitaire">🃏 Solitaire</button><button data-open="internet">🌐 Internet Explorer</button><button data-open="contact">📬 Contact</button></div></nav>
 
   <div id="lightbox" class="lightbox" hidden><button aria-label="Close image">×</button><img alt="Expanded portfolio image"></div>
 </main>

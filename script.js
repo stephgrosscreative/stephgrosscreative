@@ -43,7 +43,7 @@
       const src=frame.src;
       let href=src;
       let service='video';
-      if(src.includes('youtube.com/embed/')){
+      if(src.includes('youtube.com/embed/')||src.includes('youtube-nocookie.com/embed/')){
         href='https://www.youtube.com/watch?v='+src.split('/embed/')[1].split('?')[0];
         service='YouTube';
       }else if(src.includes('player.vimeo.com/video/')){
