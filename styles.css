@@ -50,6 +50,12 @@
 .project-card-image{padding:0;overflow:hidden}
 .project-card-image img{display:block;width:100%;height:210px;object-fit:cover}
 .project-card-image>div{padding:16px}
+.experiential-project-grid{grid-template-columns:1fr;max-width:920px;margin:0 auto}
+.experiential-project-grid .project-card-image{width:100%}
+.experiential-project-grid .project-card-image img{height:min(48vh,470px)}
+.experiential-project-grid .project-card-image>div{padding:24px 26px 28px}
+.experiential-project-grid .project-card-image h2{font-size:32px}
+.experiential-project-grid .project-card-image p{font-size:17px}
 .event-case{padding:0 0 28px}
 .event-hero{display:grid;grid-template-columns:minmax(420px,1.25fr) minmax(310px,.75fr);background:#111;color:#fff}
 .event-hero>img{display:block;width:100%;height:100%;min-height:450px;object-fit:cover}
@@ -72,6 +78,10 @@
 @media(max-width:760px){
   .work-category-grid,.event-hero,.event-details{grid-template-columns:1fr}
   .work-category-card{grid-template-columns:58px 1fr;min-height:0}
+  .experiential-project-grid .project-card-image img{height:210px}
+  .experiential-project-grid .project-card-image>div{padding:16px}
+  .experiential-project-grid .project-card-image h2{font-size:23px}
+  .experiential-project-grid .project-card-image p{font-size:14px}
   .event-hero>img{min-height:280px;max-height:380px}
   .event-hero-copy{padding:24px 18px}
   .event-details{padding:20px 16px;gap:12px}
