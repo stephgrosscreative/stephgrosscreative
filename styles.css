@@ -47,6 +47,11 @@
 .work-category-card h2{font-size:24px;margin:0 0 8px}
 .work-category-card p{margin:0 0 12px}
 .work-category-card b{color:var(--blue);font-size:12px}
+[data-window="work"] .work-category-grid{grid-template-columns:1fr;gap:10px}
+[data-window="work"] .work-category-card{grid-template-columns:58px 1fr;min-height:112px;padding:13px}
+[data-window="work"] .work-category-card .category-icon img{width:52px;height:52px}
+[data-window="work"] .work-category-card h2{font-size:19px;margin-bottom:4px}
+[data-window="work"] .work-category-card p{font-size:13px;line-height:1.35;margin-bottom:6px}
 .project-card-image{padding:0;overflow:hidden}
 .project-card-image img{display:block;width:100%;height:210px;object-fit:cover}
 .project-card-image>div{padding:16px}
@@ -56,6 +61,13 @@
 .experiential-project-grid .project-card-image>div{padding:24px 26px 28px}
 .experiential-project-grid .project-card-image h2{font-size:32px}
 .experiential-project-grid .project-card-image p{font-size:17px}
+.production-project-grid{grid-template-columns:1fr;max-width:700px;margin:0 auto}
+.production-project-grid .project-card-image img{height:280px}
+.production-project-grid .project-card-image>div{padding:20px 22px 24px}
+.production-project-grid .project-card-image h2{font-size:28px}
+.production-project-grid .project-card-image p{font-size:16px}
+.window-nav{display:flex;align-items:center;min-height:38px;padding:4px 7px;background:var(--gray);border-top:1px solid #fff;border-bottom:1px solid #777}
+.window-nav .classic-button{padding:4px 9px;font-size:12px;font-weight:bold}
 .event-case{padding:0 0 28px}
 .event-hero{display:grid;grid-template-columns:minmax(420px,1.25fr) minmax(310px,.75fr);background:#111;color:#fff}
 .event-hero>img{display:block;width:100%;height:100%;min-height:450px;object-fit:cover}
@@ -82,6 +94,10 @@
   .experiential-project-grid .project-card-image>div{padding:16px}
   .experiential-project-grid .project-card-image h2{font-size:23px}
   .experiential-project-grid .project-card-image p{font-size:14px}
+  .production-project-grid .project-card-image img{height:210px}
+  .production-project-grid .project-card-image>div{padding:16px}
+  .production-project-grid .project-card-image h2{font-size:23px}
+  .production-project-grid .project-card-image p{font-size:14px}
   .event-hero>img{min-height:280px;max-height:380px}
   .event-hero-copy{padding:24px 18px}
   .event-details{padding:20px 16px;gap:12px}

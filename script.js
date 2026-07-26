@@ -9,9 +9,11 @@
   function setActive(win){windows.forEach(w=>w.classList.remove('active'));if(!win)return;win.classList.add('active');win.style.zIndex=++z;[...taskButtons.children].forEach(b=>b.classList.toggle('active',b.dataset.task===win.dataset.window));}
   function ensureTask(win){let b=taskButtons.querySelector(`[data-task="${win.dataset.window}"]`);if(!b){b=document.createElement('button');b.className='task-button';b.dataset.task=win.dataset.window;b.textContent=titleFor(win);b.addEventListener('click',()=>{if(!win.classList.contains('open')){win.classList.add('open');setActive(win)}else if(win.classList.contains('active')){win.classList.remove('open','active');b.classList.remove('active')}else setActive(win)});taskButtons.appendChild(b)}}
   function openWindow(id){const win=document.querySelector(`[data-window="${id}"]`);if(!win)return;win.classList.add('open');ensureTask(win);setActive(win);startMenu.classList.remove('open')}
+  function closeWindow(win){if(!win)return;win.classList.remove('open','active','maximized');taskButtons.querySelector(`[data-task="${win.dataset.window}"]`)?.remove()}
   document.addEventListener('click',e=>{const opener=e.target.closest('[data-open]');if(opener)openWindow(opener.dataset.open)});
+  document.addEventListener('click',e=>{const back=e.target.closest('[data-back]');if(!back)return;closeWindow(back.closest('.window'));openWindow(back.dataset.back)});
   windows.forEach(win=>{
-    win.querySelector('[data-close]')?.addEventListener('click',()=>{win.classList.remove('open','active','maximized');taskButtons.querySelector(`[data-task="${win.dataset.window}"]`)?.remove()});
+    win.querySelector('[data-close]')?.addEventListener('click',()=>closeWindow(win));
     win.querySelector('[data-minimize]')?.addEventListener('click',()=>{win.classList.remove('open','active');taskButtons.querySelector(`[data-task="${win.dataset.window}"]`)?.classList.remove('active')});
     win.querySelector('[data-maximize]')?.addEventListener('click',()=>{win.classList.toggle('maximized');setActive(win)});
     win.addEventListener('mousedown',()=>setActive(win));
