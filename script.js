@@ -156,20 +156,27 @@
   mineFlagMode.addEventListener('click',()=>{flagMode=!flagMode;mineFlagMode.textContent=`🚩 Flag mode: ${flagMode?'On':'Off'}`;mineFlagMode.setAttribute('aria-pressed',String(flagMode))});
   newMinesweeper();
 
-  // GitHub Pages has no mail server, so prepare the visitor's message in
-  // their email application without collecting or storing personal data.
-  const contactForm=document.getElementById('contact-form');
-  const contactFormStatus=document.getElementById('contact-form-status');
-  contactForm?.addEventListener('submit',event=>{
-    event.preventDefault();
-    const data=new FormData(contactForm);
-    const name=String(data.get('name')||'').trim();
-    const email=String(data.get('email')||'').trim();
-    const subject=String(data.get('subject')||'Portfolio inquiry').trim();
-    const message=String(data.get('message')||'').trim();
-    const body=`Hi Stephanie,\n\n${message}\n\nFrom: ${name}\nEmail: ${email}`;
-    contactFormStatus.textContent='Opening your email app with this message ready to send…';
-    window.location.href=`mailto:StephanieGinaG@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // Keep the email readable and selectable while also offering one-click copy.
+  const copyEmailButton=document.getElementById('copy-email');
+  const copyEmailStatus=document.getElementById('copy-email-status');
+  copyEmailButton?.addEventListener('click',async()=>{
+    const email=document.getElementById('contact-email').textContent.trim();
+    try{
+      await navigator.clipboard.writeText(email);
+    }catch{
+      const helper=document.createElement('textarea');
+      helper.value=email;helper.setAttribute('readonly','');helper.style.position='fixed';helper.style.opacity='0';
+      document.body.append(helper);helper.select();document.execCommand('copy');helper.remove();
+    }
+    copyEmailStatus.textContent='Email copied to your clipboard.';
+  });
+
+  // A two-step Recycle Bin Easter egg with Stephanie's chosen Merlin artwork.
+  const recycleButton=document.getElementById('check-recycle');
+  recycleButton?.addEventListener('click',()=>{
+    document.getElementById('merlin-speech').textContent='Fine. There were a few.';
+    document.getElementById('recycle-copy').textContent='They’ve been safely archived where no recruiter can find them.';
+    recycleButton.hidden=true;
   });
   setTimeout(()=>{startMenu.classList.add('open')},450);
 })();

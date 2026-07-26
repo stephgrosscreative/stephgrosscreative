@@ -272,23 +272,19 @@
           <h1>Let’s make something meaningful.</h1>
           <p>For creative production, experiential marketing, photography, partnerships, or something unexpected, contact me directly here.</p>
           <div class="contact-links">
-            <a href="mailto:StephanieGinaG@gmail.com"><strong>Email</strong><span>StephanieGinaG@gmail.com</span></a>
-            <a href="https://www.linkedin.com/in/stephgross/" target="_blank" rel="noopener"><strong>LinkedIn</strong><span>linkedin.com/in/stephgross ↗</span></a>
-            <a href="https://www.instagram.com/yungstephie/" target="_blank" rel="noopener"><strong>Instagram</strong><span>@yungstephie ↗</span></a>
-            <a href="assets/docs/Stephanie-Gross.vcf" download><strong>Contact card</strong><span>Save Stephanie’s details</span></a>
+            <div class="contact-detail"><strong>Email</strong><span id="contact-email">StephanieGinaG@gmail.com</span><div class="contact-actions"><button class="classic-button" id="copy-email" type="button">Copy Email</button><a href="mailto:StephanieGinaG@gmail.com">Send Email</a></div></div>
+            <div class="contact-detail"><strong>LinkedIn</strong><span>linkedin.com/in/stephgross</span><a href="https://www.linkedin.com/in/stephgross/" target="_blank" rel="noopener">Open LinkedIn ↗</a></div>
+            <div class="contact-detail"><strong>Instagram</strong><span>@yungstephie</span><a href="https://www.instagram.com/yungstephie/" target="_blank" rel="noopener">Open Instagram ↗</a></div>
           </div>
+          <p id="copy-email-status" class="form-status" aria-live="polite"></p>
           <p class="contact-location">📍 New York City</p>
         </div>
-        <form id="contact-form" class="contact-form">
-          <h2>Contact me directly here as well</h2>
-          <p>Fill this out and your email app will open with the message ready to send.</p>
-          <label>Name<input name="name" autocomplete="name" required></label>
-          <label>Email<input name="email" type="email" autocomplete="email" required></label>
-          <label>Subject<input name="subject" placeholder="Project, opportunity, or hello" required></label>
-          <label>Message<textarea name="message" rows="7" required></textarea></label>
-          <button class="classic-button" type="submit">Prepare Email</button>
-          <p id="contact-form-status" class="form-status" aria-live="polite"></p>
-        </form>
+        <aside class="contact-card-panel">
+          <h2>Add me to your phone</h2>
+          <p class="contact-qr-copy">Scan this code to save Stephanie’s email, website, and social links.</p>
+          <img class="contact-qr" src="assets/images/contact-qr.png" alt="QR code for Stephanie Gross’s downloadable contact card">
+          <a class="classic-button contact-card-download" href="assets/docs/Stephanie-Gross.vcf" download>Add Stephanie to Contacts</a>
+        </aside>
       </div>
     </article>
 
@@ -314,12 +310,12 @@
 
     <article class="window" data-window="recycle" style="--x:28vw;--y:18vh;--w:min(520px,76vw)">
       <header class="titlebar"><span>Recycle Bin</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
-      <div class="window-body recycle-window"><div class="merlin">🧙‍♂️</div><div class="speech">Now why did you click this?!</div><p>Nothing important was deleted—only abandoned mood boards and one extremely beige portfolio template.</p></div>
+      <div class="window-body recycle-window"><img class="merlin" src="assets/images/merlin.png" alt="Merlin, the classic Office assistant"><div class="speech" id="merlin-speech">Now why did you click this?!</div><p id="recycle-copy">The Recycle Bin is empty. Stephanie has never had a bad idea.</p><button class="classic-button" id="check-recycle" type="button">Check again</button></div>
     </article>
   </section>
 
   <footer class="taskbar"><button id="start-button" class="start-button"><span class="windows-logo">★</span> Start</button><div class="task-label" aria-hidden="true">Stephanie 98</div><div id="task-buttons" class="task-buttons"></div><div id="clock" class="clock"></div></footer>
-  <nav id="start-menu" class="start-menu" aria-label="Stephanie 98 Start menu"><div class="start-rail"><span>STEPHANIE 98</span></div><div class="start-items"><button data-open="mycomputer">💻 My Computer</button><button data-open="mydocuments">🗂️ My Documents</button><button data-open="work">🗂️ Stephanie’s Work</button><button data-open="experiential">🎟️ Experiential Marketing</button><button data-open="production">📁 Creative Production</button><button data-open="commercial">👓 Commercial Imaging</button><button data-open="art">🖼️ Art Practice</button><button data-open="about">📝 About</button><button data-open="resume">📄 Résumé</button><button data-open="contact">📬 Contact Stephanie</button><hr><button data-open="paint">🎨 Paint</button><button data-open="minesweeper">💣 Minesweeper</button><button data-open="internet">🌐 Internet Explorer</button></div></nav>
+  <nav id="start-menu" class="start-menu" aria-label="Stephanie 98 Start menu"><div class="start-rail"><span>STEPHANIE 98</span></div><div class="start-items"><button data-open="about">📝 About Stephanie</button><button data-open="contact">📬 Contact Stephanie</button><button data-open="work">🗂️ Stephanie’s Work</button><button data-open="resume">📄 Résumé</button><hr><button data-open="experiential">🎟️ Experiential Marketing</button><button data-open="production">📁 Creative Production</button><button data-open="commercial">👓 Commercial Imaging</button><button data-open="art">🖼️ Art Practice</button><hr><button data-open="mycomputer">💻 My Computer</button><button data-open="mydocuments">🗂️ My Documents</button><button data-open="paint">🎨 Paint</button><button data-open="minesweeper">💣 Minesweeper</button><button data-open="internet">🌐 Internet Explorer</button></div></nav>
 
   <div id="lightbox" class="lightbox" hidden><button aria-label="Close image">×</button><img alt="Expanded portfolio image"></div>
 </main>
