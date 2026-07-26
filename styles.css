@@ -111,6 +111,10 @@
 .art-scroll-gallery figure{background:#111;border-color:#555 #000 #000 #555;box-shadow:2px 2px #777}
 .art-scroll-gallery figure>button{background:#111}
 .art-scroll-gallery figcaption{color:#fff}
+.art-series-heading{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start;margin:34px 0 16px;padding:18px;background:#111;color:#fff;border:2px solid;border-color:#555 #000 #000 #555}
+.art-series-heading>span{display:grid;place-items:center;width:46px;height:42px;background:#fff;color:var(--blue);font-size:19px;font-weight:bold}
+.art-series-heading h2{margin:0 0 6px;font-size:25px}
+.art-series-heading p{margin:0;color:#ddd}
 
 /* Classic Minesweeper, sized to feel like an application rather than a full page. */
 .minesweeper-app{padding:12px;background:var(--gray)}
