@@ -23,6 +23,7 @@
     <button class="desktop-icon" data-open="resume"><span class="desk-glyph"><img src="assets/icons/resume.png" alt=""></span><span>Resume.doc</span></button>
     <button class="desktop-icon" data-open="mydocuments"><span class="desk-glyph"><img src="assets/icons/my-documents.png" alt=""></span><span>My Documents</span></button>
     <button class="desktop-icon" data-open="internet"><span class="desk-glyph"><img src="assets/icons/internet.png" alt=""></span><span>Internet Explorer</span></button>
+    <button class="desktop-icon" data-open="contact"><span class="desk-glyph"><img src="assets/icons/contact.png" alt=""></span><span>Contact Stephanie</span></button>
     <button class="desktop-icon" data-open="paint"><span class="desk-glyph"><img src="assets/icons/paint.png" alt=""></span><span>Paint</span></button>
     <button class="desktop-icon" data-open="minesweeper"><span class="desk-glyph"><img src="assets/icons/minesweeper.png" alt=""></span><span>Minesweeper</span></button>
     <button class="desktop-icon recycle" data-open="recycle"><span class="desk-glyph"><img src="assets/icons/recycle.png" alt=""></span><span>Recycle Bin</span></button>
@@ -37,6 +38,7 @@
         <button class="classic-button" data-open="work">Explore Stephanie’s Work</button>
         <button class="classic-button" data-open="about">About Stephanie</button>
         <button class="classic-button" data-open="resume">View Résumé</button>
+        <button class="classic-button" data-open="contact">Contact Stephanie</button>
       </div>
     </div>
     <img class="clippy-art" src="assets/images/clippy.png" alt="Clippy, the classic Office assistant">
@@ -262,9 +264,32 @@
       <div class="window-body internet-page"><h1>Stephanie’s Internet</h1><p>Choose a destination:</p><a href="https://www.linkedin.com/in/stephgross/" target="_blank" rel="noopener">🌐 LinkedIn</a><a href="https://www.instagram.com/yungstephie/" target="_blank" rel="noopener">📷 Instagram</a><a href="mailto:stephanieginag@gmail.com">✉️ Email Stephanie</a><button class="internet-link" data-open="contact">📬 Contact card</button></div>
     </article>
 
-    <article class="window" data-window="contact" style="--x:25vw;--y:16vh;--w:min(560px,76vw)">
+    <article class="window" data-window="contact" style="--x:22vw;--y:7vh;--w:min(760px,88vw)">
       <header class="titlebar"><span>Contact Stephanie</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
-      <div class="window-body contact-window"><h1>Let’s make something meaningful.</h1><a href="mailto:stephanieginag@gmail.com">stephanieginag@gmail.com</a><a href="https://www.linkedin.com/in/stephgross/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.instagram.com/yungstephie/" target="_blank" rel="noopener">@yungstephie ↗</a><p>New York City</p></div>
+      <div class="window-body contact-window">
+        <div class="contact-intro">
+          <span class="eyebrow">LET’S CONNECT</span>
+          <h1>Let’s make something meaningful.</h1>
+          <p>For creative production, experiential marketing, photography, partnerships, or something unexpected, contact me directly here.</p>
+          <div class="contact-links">
+            <a href="mailto:StephanieGinaG@gmail.com"><strong>Email</strong><span>StephanieGinaG@gmail.com</span></a>
+            <a href="https://www.linkedin.com/in/stephgross/" target="_blank" rel="noopener"><strong>LinkedIn</strong><span>linkedin.com/in/stephgross ↗</span></a>
+            <a href="https://www.instagram.com/yungstephie/" target="_blank" rel="noopener"><strong>Instagram</strong><span>@yungstephie ↗</span></a>
+            <a href="assets/docs/Stephanie-Gross.vcf" download><strong>Contact card</strong><span>Save Stephanie’s details</span></a>
+          </div>
+          <p class="contact-location">📍 New York City</p>
+        </div>
+        <form id="contact-form" class="contact-form">
+          <h2>Contact me directly here as well</h2>
+          <p>Fill this out and your email app will open with the message ready to send.</p>
+          <label>Name<input name="name" autocomplete="name" required></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Subject<input name="subject" placeholder="Project, opportunity, or hello" required></label>
+          <label>Message<textarea name="message" rows="7" required></textarea></label>
+          <button class="classic-button" type="submit">Prepare Email</button>
+          <p id="contact-form-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
     </article>
 
     <article class="window" data-window="paint" style="--x:8vw;--y:5vh;--w:min(900px,90vw)">
@@ -294,7 +319,7 @@
   </section>
 
   <footer class="taskbar"><button id="start-button" class="start-button"><span class="windows-logo">★</span> Start</button><div class="task-label" aria-hidden="true">Stephanie 98</div><div id="task-buttons" class="task-buttons"></div><div id="clock" class="clock"></div></footer>
-  <nav id="start-menu" class="start-menu" aria-label="Stephanie 98 Start menu"><div class="start-rail"><span>STEPHANIE 98</span></div><div class="start-items"><button data-open="mycomputer">💻 My Computer</button><button data-open="mydocuments">🗂️ My Documents</button><button data-open="work">🗂️ Stephanie’s Work</button><button data-open="experiential">🎟️ Experiential Marketing</button><button data-open="production">📁 Creative Production</button><button data-open="commercial">👓 Commercial Imaging</button><button data-open="art">🖼️ Art Practice</button><button data-open="about">📝 About</button><button data-open="resume">📄 Résumé</button><hr><button data-open="paint">🎨 Paint</button><button data-open="minesweeper">💣 Minesweeper</button><button data-open="internet">🌐 Internet Explorer</button><button data-open="contact">📬 Contact</button></div></nav>
+  <nav id="start-menu" class="start-menu" aria-label="Stephanie 98 Start menu"><div class="start-rail"><span>STEPHANIE 98</span></div><div class="start-items"><button data-open="mycomputer">💻 My Computer</button><button data-open="mydocuments">🗂️ My Documents</button><button data-open="work">🗂️ Stephanie’s Work</button><button data-open="experiential">🎟️ Experiential Marketing</button><button data-open="production">📁 Creative Production</button><button data-open="commercial">👓 Commercial Imaging</button><button data-open="art">🖼️ Art Practice</button><button data-open="about">📝 About</button><button data-open="resume">📄 Résumé</button><button data-open="contact">📬 Contact Stephanie</button><hr><button data-open="paint">🎨 Paint</button><button data-open="minesweeper">💣 Minesweeper</button><button data-open="internet">🌐 Internet Explorer</button></div></nav>
 
   <div id="lightbox" class="lightbox" hidden><button aria-label="Close image">×</button><img alt="Expanded portfolio image"></div>
 </main>

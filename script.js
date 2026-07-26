@@ -155,5 +155,21 @@
   mineReset.addEventListener('click',newMinesweeper);
   mineFlagMode.addEventListener('click',()=>{flagMode=!flagMode;mineFlagMode.textContent=`🚩 Flag mode: ${flagMode?'On':'Off'}`;mineFlagMode.setAttribute('aria-pressed',String(flagMode))});
   newMinesweeper();
+
+  // GitHub Pages has no mail server, so prepare the visitor's message in
+  // their email application without collecting or storing personal data.
+  const contactForm=document.getElementById('contact-form');
+  const contactFormStatus=document.getElementById('contact-form-status');
+  contactForm?.addEventListener('submit',event=>{
+    event.preventDefault();
+    const data=new FormData(contactForm);
+    const name=String(data.get('name')||'').trim();
+    const email=String(data.get('email')||'').trim();
+    const subject=String(data.get('subject')||'Portfolio inquiry').trim();
+    const message=String(data.get('message')||'').trim();
+    const body=`Hi Stephanie,\n\n${message}\n\nFrom: ${name}\nEmail: ${email}`;
+    contactFormStatus.textContent='Opening your email app with this message ready to send…';
+    window.location.href=`mailto:StephanieGinaG@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
   setTimeout(()=>{startMenu.classList.add('open')},450);
 })();

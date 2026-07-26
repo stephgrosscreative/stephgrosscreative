@@ -119,6 +119,23 @@
   [data-window="work"]{max-height:calc(100vh - 132px)}
 }
 
+/* Direct contact hub: prominent links plus a GitHub Pages-friendly email form. */
+.contact-window{display:grid;grid-template-columns:minmax(0,.9fr) minmax(300px,1.1fr);gap:28px;align-items:start;text-align:left}
+.contact-intro>p{max-width:52ch}
+.contact-links{display:grid;gap:8px;margin:20px 0}
+.contact-links a{display:flex;flex-direction:column;gap:3px;padding:11px 12px;background:#fff;border:2px solid;border-color:#fff #777 #777 #fff;text-decoration:none}
+.contact-links a:hover{outline:2px dotted var(--blue);outline-offset:-6px}
+.contact-links a span{font-size:14px;text-decoration:underline}
+.contact-location{font-weight:bold}
+.contact-form{padding:18px;background:#e7e7e7;border:2px solid;border-color:#fff #777 #777 #fff}
+.contact-form h2{margin:0 0 6px}
+.contact-form>p{margin-top:0}
+.contact-form label{display:grid;gap:4px;margin:11px 0;font-weight:bold}
+.contact-form input,.contact-form textarea{width:100%;padding:7px;background:#fff;border:2px solid;border-color:#777 #fff #fff #777;font:inherit}
+.contact-form textarea{resize:vertical}
+.contact-form .classic-button{font-weight:bold}
+.form-status{min-height:20px;margin:10px 0 0!important;font-size:12px;font-weight:bold}
+
 @media(max-width:760px){
   .work-category-grid,.event-hero,.event-details{grid-template-columns:1fr}
   .work-category-card{grid-template-columns:58px 1fr;min-height:0}
@@ -142,4 +159,5 @@
   .mine-display{min-width:82px;font-size:18px}
   .mine-actions{align-items:flex-start;flex-direction:column}
   .minesweeper-board{width:min(100%,390px)}
+  .contact-window{grid-template-columns:1fr;gap:18px}
 }
