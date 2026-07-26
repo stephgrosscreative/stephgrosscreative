@@ -24,7 +24,7 @@
     <button class="desktop-icon" data-open="mydocuments"><span class="desk-glyph"><img src="assets/icons/my-documents.png" alt=""></span><span>My Documents</span></button>
     <button class="desktop-icon" data-open="internet"><span class="desk-glyph"><img src="assets/icons/internet.png" alt=""></span><span>Internet Explorer</span></button>
     <button class="desktop-icon" data-open="paint"><span class="desk-glyph"><img src="assets/icons/paint.png" alt=""></span><span>Paint</span></button>
-    <button class="desktop-icon" data-open="solitaire"><span class="desk-glyph"><img src="assets/icons/solitaire.png" alt=""></span><span>Solitaire</span></button>
+    <button class="desktop-icon" data-open="minesweeper"><span class="desk-glyph"><img src="assets/icons/minesweeper.png" alt=""></span><span>Minesweeper</span></button>
     <button class="desktop-icon recycle" data-open="recycle"><span class="desk-glyph"><img src="assets/icons/recycle.png" alt=""></span><span>Recycle Bin</span></button>
   </section>
 
@@ -223,16 +223,16 @@
       <header class="titlebar"><span>Portfolio Viewer — Commercial Imaging</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
       <div class="window-nav"><button class="classic-button" data-back="work">← Back to Stephanie’s Work</button></div>
       <div class="window-body"><div class="section-intro"><span class="eyebrow">PRINT / DIGITAL / ECOMMERCE</span><h1>Commercial Eyewear Photography &amp; Retouching</h1><p>Product photography, high-end retouching, color correction, magazine collaboration, ecommerce imaging, and print-ready production.</p><p class="credit-note"><strong>Credit note:</strong> Product-only imagery includes my photography and retouching. For model and children’s campaigns, my contribution focused on retouching and print preparation.</p></div>
-        <div class="viewer-layout"><div class="viewer-stage"><img id="commercial-main" src="assets/images/eyewear-tura-print.png" alt="Selected commercial eyewear work"><p id="commercial-caption">Magazine launch collaboration</p></div><div class="filmstrip" data-viewer="commercial-main" data-caption="commercial-caption">
-          <button data-src="assets/images/eyewear-tura-print.png" data-label="Magazine launch collaboration"><img src="assets/images/eyewear-tura-print.png" alt=""></button>
-          <button data-src="assets/images/eyewear-product-sunglasses.png" data-label="Product photography & retouching"><img src="assets/images/eyewear-product-sunglasses.png" alt=""></button>
-          <button data-src="assets/images/eyewear-caviar-ad.png" data-label="Retouching & print production"><img src="assets/images/eyewear-caviar-ad.png" alt=""></button>
-          <button data-src="assets/images/eyewear-red-products.png" data-label="Product photography & retouching"><img src="assets/images/eyewear-red-products.png" alt=""></button>
-          <button data-src="assets/images/eyewear-tmnt.png" data-label="Children’s campaign retouching & print production"><img src="assets/images/eyewear-tmnt.png" alt=""></button>
-          <button data-src="assets/images/eyewear-lamy.png" data-label="Campaign retouching & print production"><img src="assets/images/eyewear-lamy.png" alt=""></button>
-          <button data-src="assets/images/eyewear-red-frame.png" data-label="Product photography & retouching"><img src="assets/images/eyewear-red-frame.png" alt=""></button>
-          <button data-src="assets/images/eyewear-chrome-hearts.png" data-label="Ecommerce imaging & production"><img src="assets/images/eyewear-chrome-hearts.png" alt=""></button>
-        </div></div>
+        <div class="scroll-gallery commercial-scroll-gallery">
+          <figure><button data-lightbox="assets/images/eyewear-tura-print.png"><img src="assets/images/eyewear-tura-print.png" alt="Tura eyewear magazine launch collaboration"></button><figcaption>Magazine launch collaboration — retouching and print production.</figcaption></figure>
+          <figure><button data-lightbox="assets/images/eyewear-product-sunglasses.png"><img src="assets/images/eyewear-product-sunglasses.png" alt="Commercial sunglasses product photography"></button><figcaption>Product photography and retouching.</figcaption></figure>
+          <figure><button data-lightbox="assets/images/eyewear-caviar-ad.png"><img src="assets/images/eyewear-caviar-ad.png" alt="Caviar eyewear advertising campaign"></button><figcaption>Campaign retouching and print production.</figcaption></figure>
+          <figure><button data-lightbox="assets/images/eyewear-red-products.png"><img src="assets/images/eyewear-red-products.png" alt="Red eyewear product photography"></button><figcaption>Product photography and retouching.</figcaption></figure>
+          <figure><button data-lightbox="assets/images/eyewear-tmnt.png"><img src="assets/images/eyewear-tmnt.png" alt="Teenage Mutant Ninja Turtles children’s eyewear campaign"></button><figcaption>Children’s campaign retouching and print production.</figcaption></figure>
+          <figure><button data-lightbox="assets/images/eyewear-lamy.png"><img src="assets/images/eyewear-lamy.png" alt="Lamy eyewear campaign"></button><figcaption>Campaign retouching and print production.</figcaption></figure>
+          <figure><button data-lightbox="assets/images/eyewear-red-frame.png"><img src="assets/images/eyewear-red-frame.png" alt="Red eyewear frame product photograph"></button><figcaption>Product photography and retouching.</figcaption></figure>
+          <figure><button data-lightbox="assets/images/eyewear-chrome-hearts.png"><img src="assets/images/eyewear-chrome-hearts.png" alt="Chrome Hearts eyewear ecommerce imagery"></button><figcaption>Ecommerce imaging and production.</figcaption></figure>
+        </div>
       </div>
     </article>
 
@@ -240,12 +240,12 @@
       <header class="titlebar"><span>Windows Picture Viewer — Reflections</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
       <div class="window-nav"><button class="classic-button" data-back="work">← Back to Stephanie’s Work</button></div>
       <div class="window-body"><div class="section-intro"><span class="eyebrow">ONGOING PHOTOGRAPHIC SERIES</span><h1>Reflections</h1><p>Layered urban spaces where storefront glass, architecture, interiors, and reflected streets collapse into a single frame.</p></div>
-        <div class="viewer-layout"><div class="viewer-stage dark"><img id="art-main" src="assets/images/reflections-01.jpg" alt="Reflections photograph"><p id="art-caption">Reflections 01</p></div><div class="filmstrip" data-viewer="art-main" data-caption="art-caption">
-          <button data-src="assets/images/reflections-01.jpg" data-label="Reflections 01"><img src="assets/images/reflections-01.jpg" alt=""></button>
-          <button data-src="assets/images/reflections-02.jpg" data-label="Reflections 02"><img src="assets/images/reflections-02.jpg" alt=""></button>
-          <button data-src="assets/images/reflections-03.jpg" data-label="Reflections 03"><img src="assets/images/reflections-03.jpg" alt=""></button>
-          <button data-src="assets/images/reflections-04.jpg" data-label="Reflections 04"><img src="assets/images/reflections-04.jpg" alt=""></button>
-        </div></div>
+        <div class="scroll-gallery art-scroll-gallery">
+          <figure><button data-lightbox="assets/images/reflections-01.jpg"><img src="assets/images/reflections-01.jpg" alt="Reflections photograph 01"></button><figcaption>Reflections 01</figcaption></figure>
+          <figure><button data-lightbox="assets/images/reflections-02.jpg"><img src="assets/images/reflections-02.jpg" alt="Reflections photograph 02"></button><figcaption>Reflections 02</figcaption></figure>
+          <figure><button data-lightbox="assets/images/reflections-03.jpg"><img src="assets/images/reflections-03.jpg" alt="Reflections photograph 03"></button><figcaption>Reflections 03</figcaption></figure>
+          <figure><button data-lightbox="assets/images/reflections-04.jpg"><img src="assets/images/reflections-04.jpg" alt="Reflections photograph 04"></button><figcaption>Reflections 04</figcaption></figure>
+        </div>
       </div>
     </article>
 
@@ -273,10 +273,18 @@
       <div class="paint-app"><div class="paint-tools"><label>Color <input id="paint-color" type="color" value="#000000"></label><label>Size <input id="paint-size" type="range" min="1" max="30" value="5"></label><button class="classic-button" id="paint-eraser">Eraser</button><button class="classic-button" id="paint-clear">Clear</button><button class="classic-button" id="paint-save">Save masterpiece</button></div><canvas id="paint-canvas" width="900" height="520" aria-label="Paint drawing canvas"></canvas></div>
     </article>
 
-    <article class="window" data-window="solitaire" style="--x:5vw;--y:3vh;--w:min(1100px,94vw)">
-      <header class="titlebar"><span>Solitaire</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
+    <article class="window" data-window="minesweeper" style="--x:18vw;--y:7vh;--w:min(620px,88vw)">
+      <header class="titlebar"><span>Minesweeper</span><div class="window-controls"><button data-minimize>_</button><button data-maximize>□</button><button data-close>×</button></div></header>
       <div class="menu-row">Game&nbsp;&nbsp; Help</div>
-      <div class="solitaire-app"><div class="solitaire-actions"><button class="classic-button" id="new-game">New Game</button><span id="solitaire-status">Build each suit from Ace to King.</span></div><div id="solitaire-board" class="solitaire-board" aria-label="Solitaire game"></div></div>
+      <div class="minesweeper-app">
+        <div class="mine-toolbar">
+          <span class="mine-display" aria-label="Mines remaining">💣 <b id="mine-counter">010</b></span>
+          <button class="mine-reset" id="mine-reset" aria-label="Start a new game">🙂</button>
+          <span class="mine-display" aria-label="Elapsed time">⏱ <b id="mine-timer">000</b></span>
+        </div>
+        <div class="mine-actions"><button class="classic-button" id="mine-flag-mode" aria-pressed="false">🚩 Flag mode: Off</button><span id="mine-status">Clear the field without touching a mine.</span></div>
+        <div id="minesweeper-board" class="minesweeper-board" role="grid" aria-label="Minesweeper game board"></div>
+      </div>
     </article>
 
     <article class="window" data-window="recycle" style="--x:28vw;--y:18vh;--w:min(520px,76vw)">
@@ -286,7 +294,7 @@
   </section>
 
   <footer class="taskbar"><button id="start-button" class="start-button"><span class="windows-logo">★</span> Start</button><div class="task-label" aria-hidden="true">Stephanie 98</div><div id="task-buttons" class="task-buttons"></div><div id="clock" class="clock"></div></footer>
-  <nav id="start-menu" class="start-menu" aria-label="Stephanie 98 Start menu"><div class="start-rail"><span>STEPHANIE 98</span></div><div class="start-items"><button data-open="mycomputer">💻 My Computer</button><button data-open="mydocuments">🗂️ My Documents</button><button data-open="work">🗂️ Stephanie’s Work</button><button data-open="experiential">🎟️ Experiential Marketing</button><button data-open="production">📁 Creative Production</button><button data-open="commercial">👓 Commercial Imaging</button><button data-open="art">🖼️ Art Practice</button><button data-open="about">📝 About</button><button data-open="resume">📄 Résumé</button><hr><button data-open="paint">🎨 Paint</button><button data-open="solitaire">🃏 Solitaire</button><button data-open="internet">🌐 Internet Explorer</button><button data-open="contact">📬 Contact</button></div></nav>
+  <nav id="start-menu" class="start-menu" aria-label="Stephanie 98 Start menu"><div class="start-rail"><span>STEPHANIE 98</span></div><div class="start-items"><button data-open="mycomputer">💻 My Computer</button><button data-open="mydocuments">🗂️ My Documents</button><button data-open="work">🗂️ Stephanie’s Work</button><button data-open="experiential">🎟️ Experiential Marketing</button><button data-open="production">📁 Creative Production</button><button data-open="commercial">👓 Commercial Imaging</button><button data-open="art">🖼️ Art Practice</button><button data-open="about">📝 About</button><button data-open="resume">📄 Résumé</button><hr><button data-open="paint">🎨 Paint</button><button data-open="minesweeper">💣 Minesweeper</button><button data-open="internet">🌐 Internet Explorer</button><button data-open="contact">📬 Contact</button></div></nav>
 
   <div id="lightbox" class="lightbox" hidden><button aria-label="Close image">×</button><img alt="Expanded portfolio image"></div>
 </main>

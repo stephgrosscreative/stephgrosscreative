@@ -59,25 +59,101 @@
     });
   }
 
-  // Compact playable Klondike solitaire
-  const suits=['♠','♥','♦','♣'], ranks=['A','2','3','4','5','6','7','8','9','10','J','Q','K'];let game;
-  const color=s=>s==='♥'||s==='♦'?'red':'black';
-  function newGame(){let deck=[];suits.forEach(s=>ranks.forEach((r,i)=>deck.push({s,r,v:i+1,face:false,id:crypto.randomUUID()})));for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}game={stock:[],waste:[],found:[[],[],[],[]],table:[[],[],[],[],[],[],[]],selected:null};for(let c=0;c<7;c++){for(let r=0;r<=c;r++){const card=deck.pop();card.face=r===c;game.table[c].push(card)}}game.stock=deck;renderSolitaire()}
-  function cardEl(card,loc,pi,ci){const d=document.createElement('div');d.className=`card ${card.face?color(card.s):'back'} ${game.selected?.card.id===card.id?'selected':''}`;d.textContent=card.face?card.r+card.s:'';d.dataset.loc=loc;d.dataset.pi=pi;d.dataset.ci=ci;d.addEventListener('click',()=>cardClick(loc,pi,ci));return d}
-  function canStack(a,b){return b.face&&color(a.s)!==color(b.s)&&a.v===b.v-1}function canFound(c,p){return (!p.length&&c.v===1)||(p.length&&p.at(-1).s===c.s&&c.v===p.at(-1).v+1)}
-  function cardClick(loc,pi,ci){if(loc==='stock'){if(game.stock.length){const c=game.stock.pop();c.face=true;game.waste.push(c)}else{game.stock=game.waste.reverse().map(c=>({...c,face:false}));game.waste=[]}game.selected=null;renderSolitaire();return}
-    const pile=loc==='table'?game.table[pi]:loc==='waste'?game.waste:game.found[pi];const card=pile[ci];if(!card||!card.face)return;
-    if(!game.selected){game.selected={loc,pi,ci,card};renderSolitaire();return}
-    const sel=game.selected;if(sel.card.id===card.id){game.selected=null;renderSolitaire();return}
-    if(loc==='table'&&canStack(sel.card,card)){moveSelected('table',pi);return}game.selected={loc,pi,ci,card};renderSolitaire()}
-  function moveSelected(dest,pi){const s=game.selected;let src=s.loc==='table'?game.table[s.pi]:s.loc==='waste'?game.waste:game.found[s.pi];const moving=s.loc==='table'?src.splice(s.ci):[src.pop()];game.table[pi].push(...moving);if(s.loc==='table'&&src.length)src.at(-1).face=true;game.selected=null;renderSolitaire()}
-  function tryEmptyTable(pi){if(!game.selected)return;const c=game.selected.card;if(c.v!==13)return;const s=game.selected;let src=s.loc==='table'?game.table[s.pi]:s.loc==='waste'?game.waste:game.found[s.pi];const moving=s.loc==='table'?src.splice(s.ci):[src.pop()];game.table[pi].push(...moving);if(s.loc==='table'&&src.length)src.at(-1).face=true;game.selected=null;renderSolitaire()}
-  function tryFoundation(pi){if(!game.selected)return;const c=game.selected.card;if(!canFound(c,game.found[pi]))return;const s=game.selected;let src=s.loc==='table'?game.table[s.pi]:s.loc==='waste'?game.waste:game.found[s.pi];if(s.loc==='table'&&s.ci!==src.length-1)return;game.found[pi].push(src.pop());if(s.loc==='table'&&src.length)src.at(-1).face=true;game.selected=null;renderSolitaire();if(game.found.every(p=>p.length===13))document.getElementById('solitaire-status').textContent='Congratulations! Since you’re clearly persistent, you should probably hire Stephanie too.'}
-  function renderSolitaire(){const board=document.getElementById('solitaire-board');board.innerHTML='';const stock=document.createElement('div');stock.className='pile';stock.style.gridColumn='1';stock.style.gridRow='1';if(game.stock.length)stock.append(cardEl(game.stock.at(-1),'stock',0,game.stock.length-1));else stock.innerHTML='<div class="foundation-label">↻</div>';stock.addEventListener('click',e=>{if(e.target===stock)cardClick('stock',0,0)});board.append(stock);
-    const waste=document.createElement('div');waste.className='pile';waste.style.gridColumn='2';waste.style.gridRow='1';if(game.waste.length)waste.append(cardEl(game.waste.at(-1),'waste',0,game.waste.length-1));board.append(waste);
-    game.found.forEach((p,i)=>{const el=document.createElement('div');el.className='pile';el.style.gridColumn=4+i;el.style.gridRow='1';el.innerHTML=p.length?'':'<div class="foundation-label">A</div>';if(p.length)el.append(cardEl(p.at(-1),'found',i,p.length-1));el.addEventListener('dblclick',()=>tryFoundation(i));el.addEventListener('click',e=>{if(e.target===el||e.target.classList.contains('foundation-label'))tryFoundation(i)});board.append(el)});
-    game.table.forEach((p,i)=>{const el=document.createElement('div');el.className='pile';el.style.gridColumn=1+i;el.style.gridRow='2';p.forEach((c,j)=>{const ce=cardEl(c,'table',i,j);ce.style.top=(j*28)+'px';el.append(ce)});el.style.minHeight=Math.max(340,p.length*28+125)+'px';el.addEventListener('click',e=>{if(e.target===el)tryEmptyTable(i)});board.append(el)});
+  // Playable beginner Minesweeper: 9 × 9, 10 mines, and a safe first click.
+  const mineRows=9,mineCols=9,mineTotal=10;
+  const mineBoard=document.getElementById('minesweeper-board');
+  const mineStatus=document.getElementById('mine-status');
+  const mineCounter=document.getElementById('mine-counter');
+  const mineTimer=document.getElementById('mine-timer');
+  const mineReset=document.getElementById('mine-reset');
+  const mineFlagMode=document.getElementById('mine-flag-mode');
+  let mineCells=[],mineStarted=false,mineOver=false,mineFlags=0,mineSeconds=0,mineInterval=null,flagMode=false;
+
+  function mineNeighbors(index){
+    const row=Math.floor(index/mineCols),col=index%mineCols,neighbors=[];
+    for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){
+      if(!dr&&!dc)continue;
+      const r=row+dr,c=col+dc;
+      if(r>=0&&r<mineRows&&c>=0&&c<mineCols)neighbors.push(r*mineCols+c);
+    }
+    return neighbors;
   }
-  document.getElementById('new-game').addEventListener('click',newGame);document.addEventListener('dblclick',e=>{const c=e.target.closest('.card');if(!c)return;const loc=c.dataset.loc,pi=+c.dataset.pi,ci=+c.dataset.ci;const pile=loc==='table'?game.table[pi]:loc==='waste'?game.waste:game.found[pi];const card=pile[ci];if(!card.face)return;game.selected={loc,pi,ci,card};const fi=game.found.findIndex(p=>canFound(card,p));if(fi>=0)tryFoundation(fi)});newGame();
+  function formatMineNumber(n){return String(Math.max(0,Math.min(999,n))).padStart(3,'0')}
+  function updateMineDisplays(){
+    mineCounter.textContent=formatMineNumber(mineTotal-mineFlags);
+    mineTimer.textContent=formatMineNumber(mineSeconds);
+  }
+  function placeMines(firstIndex){
+    const blocked=new Set([firstIndex,...mineNeighbors(firstIndex)]);
+    const choices=mineCells.map((_,i)=>i).filter(i=>!blocked.has(i));
+    for(let i=choices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[choices[i],choices[j]]=[choices[j],choices[i]]}
+    choices.slice(0,mineTotal).forEach(i=>mineCells[i].mine=true);
+    mineCells.forEach((cell,i)=>cell.count=mineNeighbors(i).filter(n=>mineCells[n].mine).length);
+  }
+  function startMineTimer(){
+    if(mineInterval)return;
+    mineInterval=setInterval(()=>{mineSeconds=Math.min(999,mineSeconds+1);updateMineDisplays()},1000);
+  }
+  function stopMineTimer(){clearInterval(mineInterval);mineInterval=null}
+  function revealMineCell(index){
+    const cell=mineCells[index];
+    if(mineOver||cell.revealed||cell.flagged)return;
+    if(!mineStarted){mineStarted=true;placeMines(index);startMineTimer()}
+    cell.revealed=true;
+    if(cell.mine){finishMinesweeper(false);return}
+    if(cell.count===0)mineNeighbors(index).forEach(revealMineCell);
+    checkMineWin();renderMinesweeper();
+  }
+  function toggleMineFlag(index){
+    const cell=mineCells[index];
+    if(mineOver||cell.revealed)return;
+    cell.flagged=!cell.flagged;
+    mineFlags+=cell.flagged?1:-1;
+    updateMineDisplays();renderMinesweeper();
+  }
+  function checkMineWin(){
+    if(mineCells.filter(c=>c.revealed).length===mineRows*mineCols-mineTotal)finishMinesweeper(true);
+  }
+  function finishMinesweeper(won){
+    mineOver=true;stopMineTimer();mineReset.textContent=won?'😎':'😵';
+    if(won){
+      mineCells.forEach(c=>{if(c.mine)c.flagged=true});
+      mineFlags=mineTotal;
+      mineStatus.textContent='You cleared it! Since you’re this persistent, you should probably hire Stephanie.';
+    }else{
+      mineCells.forEach(c=>{if(c.mine)c.revealed=true});
+      mineStatus.textContent='Boom! Click the face to try again.';
+    }
+    updateMineDisplays();renderMinesweeper();
+  }
+  function renderMinesweeper(){
+    mineBoard.innerHTML='';
+    mineCells.forEach((cell,index)=>{
+      const button=document.createElement('button');
+      button.type='button';
+      button.className='mine-cell';
+      button.setAttribute('role','gridcell');
+      if(cell.revealed){
+        button.classList.add('revealed');
+        if(cell.mine){button.classList.add('mine-hit');button.textContent='💣'}
+        else if(cell.count){button.classList.add(`n${cell.count}`);button.textContent=cell.count}
+      }else if(cell.flagged){button.classList.add('flagged');button.textContent='🚩'}
+      button.setAttribute('aria-label',cell.revealed?(cell.mine?'Mine':cell.count?`${cell.count} neighboring mines`:'Empty square'):cell.flagged?'Flagged square':'Hidden square');
+      button.addEventListener('click',()=>flagMode?toggleMineFlag(index):revealMineCell(index));
+      button.addEventListener('contextmenu',event=>{event.preventDefault();toggleMineFlag(index)});
+      mineBoard.append(button);
+    });
+  }
+  function newMinesweeper(){
+    stopMineTimer();
+    mineCells=Array.from({length:mineRows*mineCols},()=>({mine:false,revealed:false,flagged:false,count:0}));
+    mineStarted=false;mineOver=false;mineFlags=0;mineSeconds=0;flagMode=false;
+    mineReset.textContent='🙂';mineStatus.textContent='Clear the field without touching a mine.';
+    mineFlagMode.textContent='🚩 Flag mode: Off';mineFlagMode.setAttribute('aria-pressed','false');
+    updateMineDisplays();renderMinesweeper();
+  }
+  mineReset.addEventListener('click',newMinesweeper);
+  mineFlagMode.addEventListener('click',()=>{flagMode=!flagMode;mineFlagMode.textContent=`🚩 Flag mode: ${flagMode?'On':'Off'}`;mineFlagMode.setAttribute('aria-pressed',String(flagMode))});
+  newMinesweeper();
   setTimeout(()=>{startMenu.classList.add('open')},450);
 })();
