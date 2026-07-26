@@ -36,7 +36,13 @@
   function startDraw(e){drawing=true;const p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);e.preventDefault()}
   function draw(e){if(!drawing)return;const p=pos(e);ctx.strokeStyle=eraser?'#fff':document.getElementById('paint-color').value;ctx.lineWidth=document.getElementById('paint-size').value;ctx.lineTo(p.x,p.y);ctx.stroke();e.preventDefault()}
   ['mousedown','touchstart'].forEach(x=>canvas.addEventListener(x,startDraw,{passive:false}));['mousemove','touchmove'].forEach(x=>canvas.addEventListener(x,draw,{passive:false}));['mouseup','mouseleave','touchend'].forEach(x=>canvas.addEventListener(x,()=>drawing=false));
-  document.getElementById('paint-eraser').addEventListener('click',()=>{eraser=!eraser;document.getElementById('paint-eraser').textContent=eraser?'Pencil':'Eraser'});document.getElementById('paint-clear').addEventListener('click',()=>ctx.clearRect(0,0,canvas.width,canvas.height));document.getElementById('paint-save').addEventListener('click',()=>{const a=document.createElement('a');a.download='stephanie-98-masterpiece.png';a.href=canvas.toDataURL('image/png');a.click()});
+  const paintPencil=document.getElementById('paint-pencil'),paintEraser=document.getElementById('paint-eraser');
+  function setPaintTool(useEraser){eraser=useEraser;paintPencil.classList.toggle('active',!eraser);paintEraser.classList.toggle('active',eraser)}
+  paintPencil.addEventListener('click',()=>setPaintTool(false));
+  paintEraser.addEventListener('click',()=>setPaintTool(true));
+  document.querySelectorAll('[data-paint-color]').forEach(swatch=>swatch.addEventListener('click',()=>{document.getElementById('paint-color').value=swatch.dataset.paintColor;setPaintTool(false)}));
+  document.getElementById('paint-clear').addEventListener('click',()=>ctx.clearRect(0,0,canvas.width,canvas.height));
+  document.getElementById('paint-save').addEventListener('click',()=>{const a=document.createElement('a');a.download='stephanie-98-masterpiece.png';a.href=canvas.toDataURL('image/png');a.click()});
 
   // YouTube blocks embeds opened directly from file:// because there is no web
   // referrer. Keep real embeds on GitHub Pages, but show a useful local preview.
