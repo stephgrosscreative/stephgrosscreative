@@ -1,5 +1,6 @@
 /* Phone layout: preserve the desktop world while making it comfortable to use by touch. */
 .mobile-desktop-note{display:none}
+.mobile-window-back{display:none}
 @media(max-width:760px){
   .desktop{min-height:100svh;padding-bottom:56px}
   .desktop-icons{padding:266px 10px 16px;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 8px}
@@ -16,6 +17,7 @@
   .clippy-close{right:5px;top:4px;width:32px;height:32px;font-size:20px;pointer-events:auto}
   .window,.window.maximized{left:0!important;top:0!important;width:100vw!important;height:calc(100svh - 46px)!important;border-width:0;box-shadow:none}
   .titlebar{min-height:40px;height:40px;padding-left:10px;font-size:14px}
+  .mobile-window-back{display:grid;place-items:center;width:34px;height:30px;margin-right:8px;padding:0;background:#c0c0c0;border:2px solid;border-color:#fff #555 #555 #fff;color:#111;font-size:20px;line-height:1}
   .window-controls{gap:5px}
   .window-controls button{width:34px;height:30px;font-size:18px}
   .window-nav{min-height:48px;padding:6px 8px}

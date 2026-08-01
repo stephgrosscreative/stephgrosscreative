@@ -13,11 +13,13 @@
   document.addEventListener('click',e=>{const opener=e.target.closest('[data-open]');if(opener)openWindow(opener.dataset.open)});
   document.addEventListener('click',e=>{const back=e.target.closest('[data-back]');if(!back)return;closeWindow(back.closest('.window'));openWindow(back.dataset.back)});
   windows.forEach(win=>{
+    const bar=win.querySelector('.titlebar');
+    if(bar){const mobileBack=document.createElement('button');mobileBack.className='mobile-window-back';mobileBack.type='button';mobileBack.setAttribute('aria-label','Back to desktop');mobileBack.textContent='←';mobileBack.addEventListener('click',()=>closeWindow(win));bar.insertBefore(mobileBack,bar.firstChild)}
     win.querySelector('[data-close]')?.addEventListener('click',()=>closeWindow(win));
     win.querySelector('[data-minimize]')?.addEventListener('click',()=>{win.classList.remove('open','active');taskButtons.querySelector(`[data-task="${win.dataset.window}"]`)?.classList.remove('active')});
     win.querySelector('[data-maximize]')?.addEventListener('click',()=>{win.classList.toggle('maximized');setActive(win)});
     win.addEventListener('mousedown',()=>setActive(win));
-    const bar=win.querySelector('.titlebar');let drag=null;
+    let drag=null;
     bar?.addEventListener('mousedown',e=>{if(matchMedia('(max-width:760px)').matches||e.target.closest('button')||win.classList.contains('maximized'))return;const r=win.getBoundingClientRect();drag={dx:e.clientX-r.left,dy:e.clientY-r.top};e.preventDefault()});
     document.addEventListener('mousemove',e=>{if(!drag)return;win.style.left=Math.max(0,Math.min(innerWidth-win.offsetWidth,e.clientX-drag.dx))+'px';win.style.top=Math.max(0,Math.min(innerHeight-46-win.offsetHeight,e.clientY-drag.dy))+'px'});
     document.addEventListener('mouseup',()=>drag=null);
