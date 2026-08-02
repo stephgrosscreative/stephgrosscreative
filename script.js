@@ -186,5 +186,21 @@
     document.getElementById('recycle-copy').textContent='They’ve been safely archived where no recruiter can find them.';
     recycleButton.hidden=true;
   });
+  const solitaireBoard=document.getElementById('solitaire-board');
+  const solitaireNew=document.getElementById('solitaire-new');
+  function dealSolitaire(){
+    if(!solitaireBoard)return;
+    const suits=['♠','♥','♣','♦'],ranks=['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+    const deck=suits.flatMap((suit,s)=>ranks.map((rank,r)=>({rank,suit,red:s===1||s===3,value:r+1}))).sort(()=>Math.random()-.5);
+    solitaireBoard.innerHTML='';
+    for(let pile=0;pile<7;pile++){
+      const slot=document.createElement('div');slot.className='pile';
+      for(let card=0;card<=pile;card++){
+        const item=deck.pop(),button=document.createElement('button');button.className=`card ${item.red?'red':'black'} ${card<pile?'back':''}`;button.style.top=`${card*25}px`;button.textContent=card<pile?'▧':`${item.rank}${item.suit}`;button.setAttribute('aria-label',card<pile?'Face-down card':`${item.rank} of ${item.suit}`);slot.append(button);
+      }
+      solitaireBoard.append(slot);
+    }
+  }
+  solitaireNew?.addEventListener('click',dealSolitaire);dealSolitaire();
   setTimeout(()=>{startMenu.classList.add('open')},450);
 })();
