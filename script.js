@@ -179,11 +179,18 @@
     copyEmailStatus.textContent='Email copied to your clipboard.';
   });
 
-  // A two-step Recycle Bin Easter egg with Stephanie's chosen Merlin artwork.
+  // A three-step Recycle Bin Easter egg with Stephanie's chosen Merlin artwork.
   const recycleButton=document.getElementById('check-recycle');
+  let recycleStep=0;
   recycleButton?.addEventListener('click',()=>{
-    document.getElementById('merlin-speech').textContent='Fine. There were a few.';
-    document.getElementById('recycle-copy').textContent='They’ve been safely archived where no recruiter can find them.';
+    recycleStep+=1;
+    if(recycleStep===1){
+      document.getElementById('merlin-speech').textContent='Fine. There were a few.';
+      document.getElementById('recycle-copy').textContent='They’ve been safely archived where no recruiter can find them.';
+      return;
+    }
+    document.getElementById('merlin-speech').textContent='Girl, stop!';
+    document.getElementById('recycle-copy').textContent='The Recycle Bin is empty. Go look at the work already.';
     recycleButton.hidden=true;
   });
   setTimeout(()=>{startMenu.classList.add('open')},450);
