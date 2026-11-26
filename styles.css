@@ -6,6 +6,12 @@
 .desktop:before{display:none}
 .desktop-overlay{background:none}
 .desktop-icons{top:10px;left:8px;grid-template-rows:repeat(6,98px);gap:4px 12px}
+
+/* Use the supplied portrait file directly, at a smaller size. */
+.desktop{background-image:url("assets/images/Untitled-1.jpg");background-repeat:no-repeat;background-position:left bottom;background-size:120% auto}
+.desktop:before{display:none}
+.desktop-portrait{position:absolute;z-index:1;right:clamp(8px,2vw,32px);bottom:42px;width:clamp(170px,14vw,300px);max-height:calc(100% - 70px);object-fit:contain;object-position:bottom right;pointer-events:none}
+@media(max-width:760px){.desktop{background-size:auto 100%;background-position:center bottom}.desktop-portrait{position:fixed;right:6px;bottom:42px;width:clamp(150px,40vw,230px);max-height:35vh}}
 .desktop-icon{width:106px;text-shadow:1px 1px 2px #000,-1px -1px 2px #000}
 .desk-glyph{font-size:40px;line-height:44px;filter:drop-shadow(1px 2px 1px rgba(0,0,0,.45))}
 .clippy-card{left:39%;right:auto;top:5vh;width:min(390px,88vw);min-height:515px;background:transparent;border:0;box-shadow:none;padding:0;pointer-events:none}
