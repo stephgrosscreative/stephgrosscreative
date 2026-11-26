@@ -2,7 +2,7 @@
 @media(max-width:760px){html,body{overflow:auto}.desktop{min-height:100svh;height:auto;overflow:auto;padding-bottom:50px}.desktop-icons{position:relative;top:auto;left:auto;bottom:auto;padding:12px 8px 220px;grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-template-rows:none}.desktop-icon{width:100%}.clippy-card{position:fixed;top:auto;bottom:52px;right:4%;width:92%}.window,.window.maximized{position:fixed!important;left:1vw!important;top:1vh!important;width:98vw!important;height:calc(100svh - 46px)!important;max-height:none}.titlebar{cursor:default}.about-layout,.case-study,.devil-intro,.two-players,.viewer-layout{grid-template-columns:1fr}.project-grid,.folder-view{grid-template-columns:1fr}.filmstrip{flex-direction:row;max-height:none;overflow-x:auto}.filmstrip button{min-width:110px}.viewer-stage{min-height:340px}.window-body{padding:14px}.solitaire-app{overflow:auto}.task-button{min-width:60px}.taskbar{position:fixed}}
 
 /* Stephanie 98 visual refresh. The supplied wallpaper is used byte-for-byte. */
-.desktop{background-color:#3997e8;background-image:url("assets/images/Untitled-1.jpg");background-repeat:no-repeat;background-position:center bottom;background-size:100% auto}
+.desktop{background-color:#3997e8;background-image:url("assets/images/stephanie-desktop.png");background-repeat:no-repeat;background-position:center bottom;background-size:100% auto}
 .desktop:before{display:none}
 .desktop-overlay{background:none}
 .desktop-icons{top:10px;left:8px;grid-template-rows:repeat(6,98px);gap:4px 12px}
